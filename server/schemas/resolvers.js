@@ -27,7 +27,7 @@ const resolvers = {
         },
         async login(parent, { username, password, email }, context) {
             const user = await User.findOne({ $or: [{ username: username }, { email: email }] });
-            console.log('user: ', user);
+
             if (!user) {
                 throw AuthenticationError;
             }

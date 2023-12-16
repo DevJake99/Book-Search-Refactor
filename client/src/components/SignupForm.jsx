@@ -34,9 +34,9 @@ const SignupForm = () => {
         variables: { ...userFormData },
       });
 
-      if (!response.ok) {
+      /*if (!response.ok) {
         throw new Error('something went wrong!');
-      }
+      }*/
 
       const { token, user } = response.data.createUser;
       console.log(user);
