@@ -20,7 +20,7 @@ const auth = setContext((_, { headers }) => {
 
 const client = new ApolloClient({
   // link will configure client to use auth middleware before connecting to graphql endpoint
-  link: auth.contact(httpLink),
+  link: auth.concat(httpLink),
   cache: new InMemoryCache(),
 });
 

@@ -1,11 +1,8 @@
-const { gql } = require('apollo-server');
-
-const typeDefs = gql`
+const typeDefs = `
 type Book{
     bookId: String!
     authors: [String]
     description: String
-    bookId: String!
     image: String
     link: String
     title: String!
@@ -23,7 +20,7 @@ type Auth{
     user: User
 }
 
-type Query{
+type Query {
     me: User
 }
 
@@ -47,7 +44,7 @@ type Mutation{
         link: String
     ): User
 
-    deleteBook(bookId: string): User
+    deleteBook(bookId: String): User
     
 }
 `;

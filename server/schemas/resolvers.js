@@ -1,4 +1,4 @@
-const { User } = require('../model');
+const { User } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth.js');
 
 const resolvers = {
@@ -16,9 +16,8 @@ const resolvers = {
     },
 
     Mutation: {
-        async createUser(parent, args, context) {
-            console.log('reolvers.createUser(args):', args)
-            const user = await User.create(args);
+        async createUser(parent, { username, email, password }, context) {
+            const user = await User.create({ username, email, password });
             if (!user) {
                 throw AuthenticationError;
             }

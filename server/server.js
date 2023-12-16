@@ -1,7 +1,7 @@
 const express = require('express');
 // import Apollo packages 
 const { ApolloServer } = require('@apollo/server')
-const { expressMiddleware } = require('apollo/server/express4');
+const { expressMiddleware } = require('@apollo/server/express4');
 
 const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas/index');
@@ -25,7 +25,7 @@ const startApolloServer = async () => {
   app.use(express.json());
 
   app.use('/graphql', expressMiddleware(server, {
-    context: authMiddleware,
+    context: authMiddleware
   }));
 
   // if we're in production, serve client/build as static assets
