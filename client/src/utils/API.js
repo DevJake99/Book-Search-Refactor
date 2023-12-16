@@ -51,28 +51,29 @@ export const createUser = async (userData) => {
   return data;
 };
 
-export const loginUser = async (userData) => {
+export const login = async (userData) => {
   const LOGIN_USER = gql`
-  mutation LoginUser($email: String!, $password: String!){
-    login(email: $email, password: $password){
-      token
-      user{
-        _id
-        username
-        email
-        bookCount
-        savedBooks{
-          bookId
-          authors
-          description
-          title
-          image
-          link
+    mutation Login($email: String!, $password: String!) {
+      login(email: $email, password: $password) {
+        token
+        user {
+          _id
+          username
+          email
+          bookCount
+          savedBooks {
+            bookId
+            authors
+            description
+            title
+            image
+            link
+          }
         }
       }
     }
-  }
   `;
+
   const { data } = await client.mutate({ mutation: LOGIN_USER, variables: userData });
   return data;
 };

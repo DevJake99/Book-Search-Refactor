@@ -22,14 +22,13 @@ mutation createUser($username: String!, $email: String!, $password: String!){
 }
 `;
 
-export const LOGIN = gql`
-mutation login($email:String!, $password: String!){
-    loginUser(email: $email, password: $password){
+export const LOGIN_USER = gql`
+mutation login($username:String!, $password: String!){
+    login(username: $username, password: $password){
         token
         user{
             _id
             username
-            email
             bookCount
             savedBooks{
                 bookId

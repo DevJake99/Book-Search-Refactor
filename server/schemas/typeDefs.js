@@ -30,9 +30,9 @@ type Mutation{
         email: String!,
         password: String!
     ) : Auth
-    
+
     login(
-        email: String!,
+        username: String!,
         password: String!
     ): Auth
 
