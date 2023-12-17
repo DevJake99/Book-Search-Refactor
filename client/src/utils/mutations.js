@@ -44,21 +44,21 @@ mutation login($username:String!, $password: String!){
 `;
 
 export const SAVE_BOOK = gql`
-mutation saveBook($authors: [String], $description: String, $title: String, $bookId: String, $image: String, $link: String){
-    saveBook(authors: $authors, description: $description, title: $title, bookId: $bookId, image: $image, link: $link) {
-        _id
-        username
-        email
-        bookCount
-        savedBooks{
-            boookId
-            authors
-            description
-            title
-            image
-            link
-        }
+mutation Mutation($description: String!, $title: String!, $bookId: String!, $authors: [String], $image: String, $link: String) {
+  saveBook(description: $description, title: $title, bookId: $bookId, authors: $authors, image: $image, link: $link) {
+    _id
+    username
+    email
+    bookCount
+    savedBooks {
+      authors
+      bookId
+      description
+      image
+      link
+      title
     }
+  }
 }`;
 
 export const REMOVE_BOOK = gql`

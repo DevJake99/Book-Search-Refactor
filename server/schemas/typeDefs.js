@@ -1,11 +1,11 @@
 const typeDefs = `
 type Book{
-    bookId: String!
+    bookId: String
     authors: [String]
     description: String
     image: String
     link: String
-    title: String!
+    title: String
 }
 type User{
     _id: ID!
@@ -38,12 +38,12 @@ type Mutation{
 
     saveBook(
         authors: [String],
-        description: String,
-        title: String,
-        bookId: String,
+        description: String!,
+        title: String!,
+        bookId: String!,
         image: String,
-        link: String
-    ): User
+        link: String): User
+
 
     deleteBook(bookId: String): User
     
