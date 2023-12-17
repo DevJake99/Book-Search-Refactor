@@ -63,7 +63,7 @@ mutation Mutation($description: String!, $title: String!, $bookId: String!, $aut
 
 export const REMOVE_BOOK = gql`
 mutation deleteBook($bookId: String!){
-    removeBook(bookId: $bookId){
+    deleteBook(bookId: $bookId){
         _id
         username
         email

@@ -25,7 +25,7 @@ const SavedBooks = () => {
 
   useEffect(() => {
     if (getMe.data) {
-      console.log('getMe.data', getMe.data);
+      //console.log('getMe.data', getMe.data);
       setUserData(getMe.data.me)
     }
 
